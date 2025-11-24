@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'mathapp',
     'guessgame_app',
     'hello_app',
+    'library_app',
 ]
 
 MIDDLEWARE = [
