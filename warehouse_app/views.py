@@ -42,6 +42,8 @@ def products_view(request):
     if not rows:
         rows = '<tr><td colspan="6">Немає товарів у базі.</td></tr>'
 
+    replenish_url_5 = reverse('replenish', kwargs={'count': 5})
+
     html = f"""
     <html>
       <head>
@@ -50,7 +52,7 @@ def products_view(request):
       <body>
         <h1>Склад (канцелярія)</h1>
         <p><a href="/">На головну</a></p>
-        <p><a href="{reverse('replenish', kwargs={{'count': 5}})}">Додати 5 випадкових товарів</a></p>
+        <p><a href="{replenish_url_5}">Додати 5 випадкових товарів</a></p>
 
         <table border="1" cellpadding="5" cellspacing="0">
           <tr>
@@ -67,7 +69,6 @@ def products_view(request):
     </html>
     """
     return HttpResponse(html)
-
 
 def replenish_view(request, count: int):
     """
