@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mathapp',
     'guessgame_app',
+    'hello_app',
 ]
 
 MIDDLEWARE = [
