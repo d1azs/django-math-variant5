@@ -21,6 +21,12 @@ urlpatterns = [
 
     path('hello/', hello_views.hello_view, name='hello'),
 
-    path('products/', warehouse_views.products_view, name='products'),
+    path('products/', warehouse_views.ProductListView.as_view(), name='products'),
+    path('products/create/', warehouse_views.ProductCreateView.as_view(), name='product_create'),
+    path('products/<int:pk>/', warehouse_views.ProductDetailView.as_view(), name='product_detail'),
+    path('products/<int:pk>/update/', warehouse_views.ProductUpdateView.as_view(), name='product_update'),
+    path('products/<int:pk>/delete/', warehouse_views.ProductDeleteView.as_view(), name='product_delete'),
+
+    path('replenish/<int:count>/', warehouse_views.replenish_view, name='replenish'),
     path('replenish/<int:count>/', warehouse_views.replenish_view, name='replenish'),
 ]
